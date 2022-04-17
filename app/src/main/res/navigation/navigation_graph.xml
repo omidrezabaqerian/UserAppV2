@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/navigation_graph" app:startDestination="@id/userCreateFragment">
+
+    <fragment android:id="@+id/userCreateFragment"
+              android:name="ir.omidrezabagherian.userapp.ui.register.UserCreateFragment"
+              android:label="UserCreateFragment">
+        <action android:id="@+id/action_userCreateFragment_to_uploadImageFragment"
+                app:destination="@id/uploadImageFragment"/>
+    </fragment>
+    <fragment android:id="@+id/searchFragment" android:name="ir.omidrezabagherian.userapp.ui.search.SearchFragment"
+              android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment android:id="@+id/uploadImageFragment"
+              android:name="ir.omidrezabagherian.userapp.ui.upload.UploadImageFragment"
+              android:label="UploadImageFragment">
+        <argument android:name="userID" app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="ir.omidrezabagherian.userapp.ui.details.DetailsFragment"
+        android:label="DetailsFragment" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="family"
+            app:argType="string" />
+        <argument
+            android:name="nationalCode"
+            app:argType="string" />
+    </fragment>
+</navigation>
